@@ -13,6 +13,7 @@ import markdown2
 st.set_page_config(page_title="RAG Playground", layout="centered")
 
 # Set your OpenAI API key
+#os.environ["OPENAI_API_KEY"] = "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"
 os.environ["OPENAI_API_KEY"] = "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"
 
 # Initialize session state
