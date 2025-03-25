@@ -1,0 +1,9 @@
+streamlit
+langchain
+databricks-sdk
+PyPDF2
+faiss-cpu
+openai
+langchain-community
+pycryptodome
+markdown2
