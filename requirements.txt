@@ -7,3 +7,5 @@ openai
 langchain-community
 pycryptodome
 markdown2
+pypdf
+tiktoken
