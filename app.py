@@ -8,13 +8,13 @@ from langchain.chains import RetrievalQA
 from streamlit.components.v1 import html
 import os
 import markdown2
+import openai
 
 # Page config
 st.set_page_config(page_title="RAG Playground", layout="centered")
 
 # Set your OpenAI API key
-#os.environ["OPENAI_API_KEY"] = "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"
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 # Initialize session state
 if "chat_history" not in st.session_state:
