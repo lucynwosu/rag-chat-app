@@ -8,7 +8,6 @@ from langchain.chains import RetrievalQA
 from streamlit.components.v1 import html
 import os
 import markdown2
-import openai
 
 # Page config
 st.set_page_config(page_title="RAG Playground", layout="centered")
@@ -74,14 +73,14 @@ if st.session_state.qa_chain:
         if speaker == "user":
             with st.chat_message("user", avatar="👤"):
                 st.markdown(
-                    f"<div style='background-color:#f5fbff; padding:6px 10px; border-radius:8px; white-space:pre-wrap; margin-bottom:2px;'>{message}</div>",
+                    f"<div style='background-color:#2f2f2f; color:white; padding:6px 10px; border-radius:8px; white-space:pre-wrap; margin-bottom:2px;'>{message}</div>",
                     unsafe_allow_html=True
                 )
         else:
             with st.chat_message("assistant", avatar="💬"):
                 html_message = markdown2.markdown(message)
                 st.markdown(
-                    f"<div style='background-color:#f9f9f9; padding:6px 10px; border-radius:8px; margin-bottom:2px; line-height:1.4;'>{html_message}</div>",
+                    f"<div style='background-color:#2f2f2f; color:white; padding:6px 10px; border-radius:8px; margin-bottom:2px; line-height:1.4;'>{html_message}</div>",
                     unsafe_allow_html=True
                 )
 
@@ -91,7 +90,7 @@ if st.session_state.qa_chain:
     if prompt:
         with st.chat_message("user", avatar="👤"):
             st.markdown(
-                f"<div style='background-color:#f5fbff; padding:6px 10px; border-radius:8px; white-space:pre-wrap; margin-bottom:2px;'>{prompt}</div>",
+                f"<div style='background-color:#2f2f2f; color:white; padding:6px 10px; border-radius:8px; white-space:pre-wrap; margin-bottom:2px;'>{prompt}</div>",
                 unsafe_allow_html=True
             )
 
@@ -101,7 +100,7 @@ if st.session_state.qa_chain:
         with st.chat_message("assistant", avatar="💬"):
             html_answer = markdown2.markdown(answer)
             st.markdown(
-                f"<div style='background-color:#f9f9f9; padding:6px 10px; border-radius:8px; margin-bottom:2px; line-height:1.4;'>{html_answer}</div>",
+                f"<div style='background-color:#2f2f2f; color:white; padding:6px 10px; border-radius:8px; margin-bottom:2px; line-height:1.4;'>{html_answer}</div>",
                 unsafe_allow_html=True
             )
 
@@ -127,3 +126,4 @@ else:
     st.markdown("""
     <h4 style='text-align:center; color:gray;'>👈 Upload PDFs in the sidebar to enable chat</h4>
     """, unsafe_allow_html=True)
+
